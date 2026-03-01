@@ -1,0 +1,59 @@
+dataset:
+  name: imagenet
+  num_classes: 1000
+  pre_size: 256
+  image_size: 224
+
+  interpolation: bicubic # following clip.
+  normalization_type: clip ## imagenet | clip.
+
+  num_workers: '@{num_workers}'
+  num_gpus: '@{num_gpus}'
+  num_machines: '@{num_machines}'
+
+  split_names: [train,test]
+  train:
+    dataset_class: ImglistDataset
+    data_dir: /data/dataset/ImageNet
+    imglist_pth: ./data/benchmark_imglist/imagenet/train_imagenet_16.txt
+    batch_size: 256
+    shuffle: True
+
+  test:
+    dataset_class: ImglistDataset
+    data_dir: /data/dataset/ImageNet
+    imglist_pth: ./data/benchmark_imglist/imagenet/test_imagenet.txt
+    batch_size: 256
+    shuffle: False
+
+ood_dataset:
+  name: imagenet_ood
+  num_classes: 1000
+
+  dataset_class: ImglistDataset
+  interpolation: bicubic
+  normalization_type: clip
+  batch_size: 256  #256
+  shuffle: False # for Test time method, shuffle is performed in the trainer, please verify.
+
+  pre_size: 256
+  image_size: 224
+  num_workers: '@{num_workers}'
+  num_gpus: '@{num_gpus}'
+  num_machines: '@{num_machines}'
+  split_names: [ood] 
+
+  ood:
+    datasets: [openimage,textures,inaturalist] 
+    openimage:
+      data_dir: /data/dataset/
+      imglist_pth: ./data/benchmark_imglist/imagenet/test_openimage_o.txt
+    textures:
+      data_dir:  /data/dataset/dtd/images/
+      imglist_pth: ./data/benchmark_imglist/imagenet/test_textures.txt
+    inaturalist:
+      data_dir: /data/dataset/
+      imglist_pth: ./data/benchmark_imglist/imagenet/test_iNaturalist.txt
+
+
+
