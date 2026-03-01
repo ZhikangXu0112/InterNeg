@@ -8,9 +8,7 @@ This repository is the official code for the paper [Mind the Way You Select Nega
 
 > Abstract: Out-of-distribution (OOD) detection seeks to identify samples from unknown classes, a critical capability for deploying machine learning models in open-world scenarios. Recent research has demonstrated that Vision-Language Models (VLMs) can effectively leverage their multi-modal representations for OOD detection. However, current methods often incorporate **intra-modal** distance during OOD detection, such as comparing negative texts with ID labels or comparing test images with image proxies. This design paradigm creates an inherent inconsistency against the **inter-modal** distance that CLIP-like VLMs are optimized for, potentially leading to suboptimal performance. To address this limitation, we propose InterNeg, a simple yet effective framework that systematically utilizes consistent inter-modal distance enhancement from textual and visual perspectives. From the textual perspective, we devise an inter-modal criterion for selecting negative texts. From the visual perspective, we dynamically identify high-confidence OOD images and invert them into the textual space, generating extra negative text embeddings guided by inter-modal distance. Extensive experiments across multiple benchmarks demonstrate the superiority of our approach. Notably, our InterNeg achieves state-of-the-art performance compared to existing works, with a 3.47\% reduction in FPR95 on the large-scale ImageNet benchmark and a 5.50\% improvement in AUROC on the challenging Near-OOD benchmark.
 
-<img src="figures/overview.png" alt="Overview of InterNeg" style="zoom: 50%;" /> 
-
-<img src="figures/code.png" alt="Pipeline of InterNeg" style="zoom: 50%;" />
+<img src="figures/overview.png" alt="Overview of InterNeg" style="zoom: 33%;" /> <img src="figures/code.png" alt="Pipeline of InterNeg" style="zoom: 33%;" />
 
 ## Dependencies and Installation
 
