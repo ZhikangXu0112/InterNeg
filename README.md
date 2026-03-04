@@ -1,6 +1,6 @@
 # InterNeg
 
-This repository is the official code for the paper [Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs] (CVPR 2026).
+This repository is the official code for the paper [Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs](https://arxiv.org/pdf/2603.02618) (CVPR 2026).
 
 **Paper Title: Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs.**
 
